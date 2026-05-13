@@ -404,9 +404,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
   .foot-in{grid-template-columns:1fr;text-align:center;padding:28px 20px;gap:16px}
   .foot-r{align-items:center;text-align:center}
 
-  /* SUB NAV scroll */
-  .subnav-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
-  .subnav-scroll::-webkit-scrollbar{display:none}
 }
 
 @media(max-width:400px){
@@ -489,17 +486,6 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
       <img src="hero.png" alt="Пули VТОЧКУ" style="width:100%;height:100%;object-fit:cover;object-position:center">
     </div>
   </section>
-
-  
-  <!-- SUB NAV -->
-  <div class="subnav-scroll" style="background:var(--black);border-bottom:1px solid var(--border);padding:0 64px;display:flex;align-items:center;gap:0;overflow-x:auto">
-    <button onclick="goPage('shop')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);font-family:'Mulish',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:16px 20px;white-space:nowrap;transition:all .2s" onmouseover="this.style.color='#f0f0f0';this.style.borderBottomColor='var(--red)'" onmouseout="this.style.color='';this.style.borderBottomColor='transparent'">Каталог</button>
-    <button onclick="goSec('about')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);font-family:'Mulish',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:16px 20px;white-space:nowrap;transition:all .2s" onmouseover="this.style.color='#f0f0f0';this.style.borderBottomColor='var(--red)'" onmouseout="this.style.color='';this.style.borderBottomColor='transparent'">О производстве</button>
-    <button onclick="goSec('calibers')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);font-family:'Mulish',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:16px 20px;white-space:nowrap;transition:all .2s" onmouseover="this.style.color='#f0f0f0';this.style.borderBottomColor='var(--red)'" onmouseout="this.style.color='';this.style.borderBottomColor='transparent'">Калибры</button>
-    <button onclick="goSec('slug-sec')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);font-family:'Mulish',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:16px 20px;white-space:nowrap;transition:all .2s" onmouseover="this.style.color='#f0f0f0';this.style.borderBottomColor='var(--red)'" onmouseout="this.style.color='';this.style.borderBottomColor='transparent'">Слаги</button>
-    <button onclick="goSec('contact-sec')" style="background:none;border:none;border-bottom:2px solid transparent;color:var(--muted2);font-family:'Mulish',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;padding:16px 20px;white-space:nowrap;transition:all .2s" onmouseover="this.style.color='#f0f0f0';this.style.borderBottomColor='var(--red)'" onmouseout="this.style.color='';this.style.borderBottomColor='transparent'">Контакты</button>
-  </div>
-
 <div class="strip">
     <div class="strip-item"><span class="si-icon">🏭</span><div><div class="si-title">Своё производство</div><div class="si-sub">Полный цикл. Краснодар.</div></div></div>
     <div class="strip-item"><span class="si-icon">⚖️</span><div><div class="si-title">Контроль качества</div><div class="si-sub">Вес, геометрия, поверхность</div></div></div>
