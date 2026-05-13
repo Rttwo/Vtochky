@@ -389,17 +389,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
       </div>
     </div>
     <div class="hero-right">
-      <span class="fb fb1"></span><span class="fb fb2"></span><span class="fb fb3"></span><span class="fb fb4"></span>
-      <div class="big-tin">
-        <div class="tin-ring"></div><div class="tin-ring2"></div><div class="tin-ring3"></div>
-        <div class="tin-body">
-          <div class="tb-brand"><span class="vcred">V</span><span class="vdot">·</span>ТОЧКУ</div>
-          <div class="tb-line"></div>
-          <div class="tb-cal">CAL 6.35mm</div>
-          <div class="tb-sub">Пули для пневматики · 300шт</div>
-          <div class="tb-cs">CAREFULLY SELECTED</div>
-        </div>
-      </div>
+      <img src="images/hero-tins.jpg" alt="Пули VТОЧКУ" style="width:100%;height:100%;object-fit:cover;object-position:center">
     </div>
   </section>
 
@@ -442,6 +432,13 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
       </div>
       <div class="ac"><div class="ac-n">3</div><div class="ac-l">Калибра</div><div class="ac-t">5.5 · 6.35 · 7.62 мм</div></div>
       <div class="ac"><div class="ac-n">10<em>+</em></div><div class="ac-l">Позиций</div><div class="ac-t">Диаболо и слаги</div></div>
+    </div>
+    <!-- Фото галерея -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;margin-top:32px;height:320px">
+      <img src="images/bullets-close-two.jpg" alt="Пули крупным планом" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
+      <img src="images/bullets-762-spilled.jpg" alt="Пули 7.62" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
+      <img src="images/bullets-635-macro.jpg" alt="Пули 6.35 макро" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
+      <img src="images/slug-side-view.jpg" alt="Слаги" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
     </div>
   </section>
 
@@ -506,7 +503,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
       </div>
       <div class="slug-vis">
         <div class="slug-main-card">
-          <span class="slug-main-icon">🔩</span>
+          <img src="images/slug-two.jpg" alt="Слаги VТОЧКУ" style="width:100%;height:160px;object-fit:cover;border-radius:2px;margin-bottom:16px;display:block">
           <div class="slug-main-title">СЛАГИ</div>
           <div class="slug-main-sub">CAL 6.35mm · 2.2 г · Carefully Selected</div>
         </div>
@@ -648,6 +645,7 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
 </div>
 
 <script>
+const PHOTOS={1:'images/tin-55-165.jpg',2:'images/tin-55-1645.jpg',3:'images/tin-55-1645-side.jpg',4:'images/tin-635-165.jpg',5:'images/tin-635-175.jpg',6:'images/tin-635-22.jpg',7:'images/tin-635-23.jpg',8:'images/tin-762-30.jpg',9:'images/tin-762-325.jpg',10:'images/tin-slug-open.jpg',11:'images/tin-slug-250.jpg'};
 const PRODS=[
   {id:1,name:'Пули VТОЧКУ Диаболо 5.5мм 1.18г',cal:'5.5',w:'1.18г',type:'pellet',cnt:300,price:890},
   {id:2,name:'Пули VТОЧКУ Диаболо 5.5мм 1.645г M1',cal:'5.5',w:'1.645г M1',type:'pellet',cnt:300,price:980},
