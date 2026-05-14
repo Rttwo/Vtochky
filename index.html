@@ -739,17 +739,17 @@ body,*,*:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 
 <script>
 const PRODS=[
-  {id:1,name:'Пули VТОЧКУ Диаболо 5.5мм 1.18г',cal:'5.5',w:'1.18г',type:'pellet',cnt:300,price:890},
-  {id:2,name:'Пули VТОЧКУ Диаболо 5.5мм 1.645г M1',cal:'5.5',w:'1.645г M1',type:'pellet',cnt:300,price:980},
-  {id:3,name:'Пули VТОЧКУ Диаболо 5.5мм 1.65г',cal:'5.5',w:'1.65г',type:'pellet',cnt:300,price:980},
-  {id:4,name:'Пули VТОЧКУ Диаболо 6.35мм 1.65г',cal:'6.35',w:'1.65г',type:'pellet',cnt:300,price:1100},
-  {id:5,name:'Пули VТОЧКУ Диаболо 6.35мм 1.75г',cal:'6.35',w:'1.75г',type:'pellet',cnt:300,price:1200},
-  {id:6,name:'Пули VТОЧКУ Диаболо 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'pellet',cnt:300,price:1350},
-  {id:7,name:'Пули VТОЧКУ Диаболо 6.35мм 2.3г',cal:'6.35',w:'2.3г',type:'pellet',cnt:300,price:1400},
-  {id:8,name:'Пули VТОЧКУ Диаболо 7.62мм 3.0г',cal:'7.62',w:'3.0г',type:'pellet',cnt:150,price:1450},
-  {id:9,name:'Пули VТОЧКУ Диаболо 7.62мм 3.25г',cal:'7.62',w:'3.25г',type:'pellet',cnt:150,price:1500},
-  {id:10,name:'Слаги VТОЧКУ 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'slug',cnt:100,price:1100},
-  {id:11,name:'Слаги VТОЧКУ 6.35мм 2.2г (250шт)',cal:'6.35',w:'2.2г',type:'slug',cnt:250,price:2200},
+  {id:1,name:'Пули VТОЧКУ Диаболо 5.5мм 1.18г',cal:'5.5',w:'1.18г',type:'pellet',cnt:300,price:890,img:'p55-165.jpg'},
+  {id:2,name:'Пули VТОЧКУ Диаболо 5.5мм 1.645г M1',cal:'5.5',w:'1.645г M1',type:'pellet',cnt:300,price:980,img:'p55-1645.jpg'},
+  {id:3,name:'Пули VТОЧКУ Диаболо 5.5мм 1.65г',cal:'5.5',w:'1.65г',type:'pellet',cnt:300,price:980,img:'p55-165.jpg'},
+  {id:4,name:'Пули VТОЧКУ Диаболо 6.35мм 1.65г',cal:'6.35',w:'1.65г',type:'pellet',cnt:300,price:1100,img:'p635-165.jpg'},
+  {id:5,name:'Пули VТОЧКУ Диаболо 6.35мм 1.75г',cal:'6.35',w:'1.75г',type:'pellet',cnt:300,price:1200,img:'p635-175.jpg'},
+  {id:6,name:'Пули VТОЧКУ Диаболо 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'pellet',cnt:300,price:1350,img:'p635-22.jpg'},
+  {id:7,name:'Пули VТОЧКУ Диаболо 6.35мм 2.3г',cal:'6.35',w:'2.3г',type:'pellet',cnt:300,price:1400,img:'p635-23.jpg'},
+  {id:8,name:'Пули VТОЧКУ Диаболо 7.62мм 3.0г',cal:'7.62',w:'3.0г',type:'pellet',cnt:150,price:1450,img:'p762-30.jpg'},
+  {id:9,name:'Пули VТОЧКУ Диаболо 7.62мм 3.25г',cal:'7.62',w:'3.25г',type:'pellet',cnt:150,price:1500,img:'p762-325.jpg'},
+  {id:10,name:'Слаги VТОЧКУ 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'slug',cnt:100,price:1100,img:'slug-close.jpg'},
+  {id:11,name:'Слаги VТОЧКУ 6.35мм 2.2г (250шт)',cal:'6.35',w:'2.2г',type:'slug',cnt:250,price:2200,img:'slug-250.jpg'},
 ];
 
 let cart=[];
@@ -813,12 +813,7 @@ function rProds(){
   document.getElementById('pGrid').innerHTML=PRODS.map(p=>`
     <div class="pc" id="pc${p.id}" data-cal="${p.cal}" data-type="${p.type}">
       <div class="pc-img">
-        <div class="ptm">
-          <div class="ptm-br">VТОЧКУ</div>
-          <div class="ptm-cl">CAL ${p.cal}mm</div>
-          <div class="ptm-wt">${p.w}</div>
-          <div class="ptm-cs">Carefully Selected</div>
-        </div>
+        <img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
         <span class="pbadge ${p.type==='pellet'?'bp':'bs'}">${p.type==='pellet'?'Диаболо':'Слаги'}</span>
       </div>
       <div class="pc-body">
