@@ -527,12 +527,6 @@ body,*,*:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
       <div class="ac"><div class="ac-n">10<em>+</em></div><div class="ac-l">Позиций</div><div class="ac-t">Диаболо и слаги</div></div>
     </div>
     <!-- Фото галерея -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;margin-top:32px;height:320px">
-      <img src="bullets-close-two.jpg" alt="Пули крупным планом" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
-      <img src="bullets-762-spilled.jpg" alt="Пули 7.62" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
-      <img src="bullets-635-macro.jpg" alt="Пули 6.35 макро" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
-      <img src="slug-side-view.jpg" alt="Слаги" style="width:100%;height:100%;object-fit:cover;border-radius:2px">
-    </div>
   </section>
 
   <section class="calibers" id="calibers">
@@ -741,17 +735,17 @@ body,*,*:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 
 <script>
 const PRODS=[
-  {id:1,name:'Пули VТОЧКУ Диаболо 5.5мм 1.18г',cal:'5.5',w:'1.18г',type:'pellet',cnt:300,price:890,img:'p55-165.jpg'},
-  {id:2,name:'Пули VТОЧКУ Диаболо 5.5мм 1.645г M1',cal:'5.5',w:'1.645г M1',type:'pellet',cnt:300,price:980,img:'p55-1645.jpg'},
-  {id:3,name:'Пули VТОЧКУ Диаболо 5.5мм 1.65г',cal:'5.5',w:'1.65г',type:'pellet',cnt:300,price:980,img:'p55-165.jpg'},
-  {id:4,name:'Пули VТОЧКУ Диаболо 6.35мм 1.65г',cal:'6.35',w:'1.65г',type:'pellet',cnt:300,price:1100,img:'p635-165.jpg'},
-  {id:5,name:'Пули VТОЧКУ Диаболо 6.35мм 1.75г',cal:'6.35',w:'1.75г',type:'pellet',cnt:300,price:1200,img:'p635-175.jpg'},
-  {id:6,name:'Пули VТОЧКУ Диаболо 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'pellet',cnt:300,price:1350,img:'p635-22.jpg'},
-  {id:7,name:'Пули VТОЧКУ Диаболо 6.35мм 2.3г',cal:'6.35',w:'2.3г',type:'pellet',cnt:300,price:1400,img:'p635-23.jpg'},
-  {id:8,name:'Пули VТОЧКУ Диаболо 7.62мм 3.0г',cal:'7.62',w:'3.0г',type:'pellet',cnt:150,price:1450,img:'p762-30.jpg'},
-  {id:9,name:'Пули VТОЧКУ Диаболо 7.62мм 3.25г',cal:'7.62',w:'3.25г',type:'pellet',cnt:150,price:1500,img:'p762-325.jpg'},
-  {id:10,name:'Слаги VТОЧКУ 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'slug',cnt:100,price:1100,img:'slug-635-22.jpg'},
-  {id:11,name:'Слаги VТОЧКУ 6.35мм 2.2г (250шт)',cal:'6.35',w:'2.2г',type:'slug',cnt:250,price:2200,img:'slug-635-22.jpg'},
+  {id:1,name:'Пули VТОЧКУ Диаболо 5.5мм 1.18г',cal:'5.5',w:'1.18г',type:'pellet',cnt:300,price:890,img:'p55-165.jpg',bc:'0.036'},
+  {id:2,name:'Пули VТОЧКУ Диаболо 5.5мм 1.645г M1',cal:'5.5',w:'1.645г M1',type:'pellet',cnt:300,price:980,img:'p55-1645.jpg',bc:'0.039'},
+  {id:3,name:'Пули VТОЧКУ Диаболо 5.5мм 1.65г',cal:'5.5',w:'1.65г',type:'pellet',cnt:300,price:980,img:'p55-165.jpg',bc:''},
+  {id:4,name:'Пули VТОЧКУ Диаболо 6.35мм 1.65г',cal:'6.35',w:'1.65г',type:'pellet',cnt:300,price:1100,img:'p635-165.jpg',bc:'0.036'},
+  {id:5,name:'Пули VТОЧКУ Диаболо 6.35мм 1.75г',cal:'6.35',w:'1.75г',type:'pellet',cnt:300,price:1200,img:'p635-175.jpg',bc:'0.038'},
+  {id:6,name:'Пули VТОЧКУ Диаболо 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'pellet',cnt:300,price:1350,img:'p635-22.jpg',bc:'0.052'},
+  {id:7,name:'Пули VТОЧКУ Диаболо 6.35мм 2.3г',cal:'6.35',w:'2.3г',type:'pellet',cnt:300,price:1400,img:'p635-23.jpg',bc:'0.054'},
+  {id:8,name:'Пули VТОЧКУ Диаболо 7.62мм 3.0г',cal:'7.62',w:'3.0г',type:'pellet',cnt:150,price:1450,img:'p762-30.jpg',bc:'0.048'},
+  {id:9,name:'Пули VТОЧКУ Диаболо 7.62мм 3.25г',cal:'7.62',w:'3.25г',type:'pellet',cnt:150,price:1500,img:'p762-325.jpg',bc:'0.051'},
+  {id:10,name:'Слаги VТОЧКУ 6.35мм 2.2г',cal:'6.35',w:'2.2г',type:'slug',cnt:100,price:1100,img:'slug-635-22.jpg',bc:'0.079'},
+  {id:11,name:'Слаги VТОЧКУ 6.35мм 2.2г (250шт)',cal:'6.35',w:'2.2г',type:'slug',cnt:250,price:2200,img:'slug-635-22.jpg',bc:'0.079'},
 ];
 
 let cart=[];
@@ -814,16 +808,17 @@ function goCo(){if(!cart.length){toast('Корзина пуста');return;}clos
 function rProds(){
   document.getElementById('pGrid').innerHTML=PRODS.map(p=>`
     <div class="pc" id="pc${p.id}" data-cal="${p.cal}" data-type="${p.type}">
-      <div class="pc-img">
+      <div class="pc-img" onclick="openProd(${p.id})">
         <img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">
         <span class="pbadge ${p.type==='pellet'?'bp':'bs'}">${p.type==='pellet'?'Диаболо':'Слаги'}</span>
       </div>
       <div class="pc-body">
-        <div class="pc-name">${p.name}</div>
+        <div class="pc-name" onclick="openProd(${p.id})">${p.name}</div>
         <div class="pc-tags">
           <span class="pc-tag">CAL ${p.cal}mm</span>
           <span class="pc-tag">${p.w}</span>
           <span class="pc-tag">${p.cnt}шт</span>
+          ${p.bc ? `<span class="pc-tag" style="color:var(--red);border:1px solid rgba(200,24,26,.3)">БК ${p.bc}</span>` : ''}
         </div>
         <div class="pc-foot">
           <div><div class="pc-price">${f(p.price)} <em>₽</em></div><div class="pc-psub">${p.cnt}шт / банка</div></div>
@@ -831,6 +826,44 @@ function rProds(){
         </div>
       </div>
     </div>`).join('');
+}
+
+function openProd(id){
+  const p=PRODS.find(x=>x.id===id);
+  if(!p)return;
+  document.getElementById('pmContent').innerHTML=`
+    <div style="height:280px;overflow:hidden">
+      <img src="${p.img}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover;object-position:center">
+    </div>
+    <div style="padding:28px">
+      <div style="font-size:9px;font-weight:800;letter-spacing:2px;color:var(--muted);margin-bottom:8px;text-transform:uppercase">${p.type==='pellet'?'Диаболо · Airgun Pellets':'Слаги · Airgun Slugs'}</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:2px;color:var(--white);margin-bottom:16px">${p.name}</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <span style="font-size:9px;color:var(--muted2);background:rgba(255,255,255,.04);padding:4px 10px;letter-spacing:1px;text-transform:uppercase">CAL ${p.cal}mm</span>
+        <span style="font-size:9px;color:var(--muted2);background:rgba(255,255,255,.04);padding:4px 10px;letter-spacing:1px;text-transform:uppercase">${p.w}</span>
+        <span style="font-size:9px;color:var(--muted2);background:rgba(255,255,255,.04);padding:4px 10px;letter-spacing:1px;text-transform:uppercase">${p.cnt}шт / банка</span>
+        ${p.bc?`<span style="font-size:9px;color:var(--red);border:1px solid rgba(200,24,26,.35);padding:4px 10px;letter-spacing:1px;text-transform:uppercase">БК ${p.bc}</span>`:''}
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:28px;font-weight:900;color:var(--white)">${f(p.price)} <span style="font-size:16px;color:var(--muted)">₽</span></div>
+          <div style="font-size:11px;color:var(--muted);margin-top:2px">${p.cnt}шт / банка</div>
+        </div>
+        <button id="pmBtn${p.id}" onclick="add(${p.id});updatePmBtn(${p.id})" style="background:var(--red);color:var(--white);border:none;padding:14px 28px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transition:background .2s">${cart.find(x=>x.id===p.id)?'✓ В корзине':'В корзину'}</button>
+      </div>
+    </div>`;
+  document.getElementById('pmOv').style.display='block';
+  document.getElementById('pmBox').style.display='block';
+  document.body.style.overflow='hidden';
+}
+function closeProd(){
+  document.getElementById('pmOv').style.display='none';
+  document.getElementById('pmBox').style.display='none';
+  document.body.style.overflow='';
+}
+function updatePmBtn(id){
+  const btn=document.getElementById('pmBtn'+id);
+  if(btn){btn.textContent='✓ В корзине';btn.style.background='#1a5c1a';}
 }
 
 function filt(v,btn){
@@ -886,5 +919,12 @@ function toast(msg){
 
 rProds();rCart();
 </script>
+<!-- PRODUCT MODAL -->
+<div id="pmOv" onclick="closeProd()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:900;backdrop-filter:blur(4px)"></div>
+<div id="pmBox" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(560px,95vw);max-height:90vh;overflow-y:auto;background:#1a1a1a;border:1px solid rgba(200,24,26,.25);z-index:901">
+  <button onclick="closeProd()" style="position:absolute;top:14px;right:14px;background:none;border:none;color:#fff;font-size:22px;line-height:1;z-index:2">✕</button>
+  <div id="pmContent"></div>
+</div>
+
 </body>
 </html>
