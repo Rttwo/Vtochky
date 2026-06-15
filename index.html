@@ -338,6 +338,16 @@ footer{background:var(--dark);border-top:1px solid var(--border);padding:0}
 .pp-note{font-size:11px;color:var(--muted);text-align:center;letter-spacing:.5px}
 @media(max-width:700px){.pp-grid{grid-template-columns:1fr;gap:24px}.pp-img{position:static}.pp-img img{aspect-ratio:4/3}}
 
+/* PRODUCT PAGE FIXED BAR */
+.pp-fixbar{position:fixed;bottom:0;left:0;right:0;background:#141414;border-top:1px solid rgba(200,24,26,.2);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:800;backdrop-filter:blur(8px)}
+.pp-fixbar-info{display:flex;flex-direction:column;gap:2px}
+.pp-fixbar-name{font-size:12px;font-weight:800;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+.pp-fixbar-price{font-size:18px;font-weight:900;color:var(--white)}
+.pp-fixbar-price em{font-size:12px;color:var(--muted);font-style:normal}
+.pp-fixbar-btn{flex-shrink:0;padding:13px 28px;background:var(--red);color:var(--white);border:none;font-family:'Mulish',sans-serif;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;transition:background .2s;white-space:nowrap}
+.pp-fixbar-btn:hover{background:var(--red2)}
+.pp-fixbar-btn.added{background:#1a5c1a}
+
 /* TOAST */
 .toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(18px);background:var(--dark3);border:1px solid rgba(200,24,26,.35);color:var(--white);padding:11px 26px;font-size:11px;font-weight:800;letter-spacing:2px;z-index:999;opacity:0;transition:all .3s;pointer-events:none;white-space:nowrap;text-transform:uppercase}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
@@ -671,7 +681,7 @@ body,*,*:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 
   <footer><div class="foot-in">
     <div class="foot-brand" onclick="goPage('home')"><span class="vcred">V</span><span class="vdot">·</span>ТОЧКУ</div>
-    <div class="foot-mid">ИП Краснова Антонина Павловна · ИНН 231516940847<br>пер. Дорожный 8/2, Краснодар<br><span style="color:#333;font-size:10px">© 2025 VТОЧКУ</span></div>
+    <div class="foot-mid">ИП Краснова Антонина Павловна<br>ИНН 231516940847 · ОГРНИП 313231522100034<br><span style="color:#333;font-size:10px">© 2025 VТОЧКУ</span></div>
     <div class="foot-r"><span>Связаться</span><a href="tel:+78612410010">+7 (861) 241-00-10</a><a href="tel:+79882410010">+7 (988) 241-00-10</a></div>
   </div></footer>
 </div>
@@ -696,7 +706,7 @@ body,*,*:hover{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
   </div>
   <footer><div class="foot-in">
     <div class="foot-brand" onclick="goPage('home')"><span class="vcred">V</span><span class="vdot">·</span>ТОЧКУ</div>
-    <div class="foot-mid">ИП Краснова Антонина Павловна · ИНН 231516940847<br>пер. Дорожный 8/2, Краснодар</div>
+    <div class="foot-mid">ИП Краснова Антонина Павловна<br>ИНН 231516940847 · ОГРНИП 313231522100034</div>
     <div class="foot-r"><a href="tel:+78612410010">+7 (861) 241-00-10</a><a href="tel:+79882410010">+7 (988) 241-00-10</a></div>
   </div></footer>
 </div>
@@ -868,7 +878,7 @@ function openProd(id){
     : `Диаболо <strong>VТОЧКУ</strong> cal ${p.cal}мм ${p.w} — пули классической формы для точной и стабильной стрельбы из PCP-пневматики. Производятся на собственном оборудовании в Краснодаре с контролем каждого этапа: вес, геометрия, качество поверхности и однородность свинцового сплава.${p.bc?` Баллистический коэффициент <strong>${p.bc}</strong>.`:''} Подходят для соревновательной и охотничьей стрельбы.`;
   const inCart=cart.find(x=>x.id===p.id);
   document.getElementById('prodPageContent').innerHTML=`
-    <div class="pp">
+    <div class="pp" style="padding-bottom:100px">
       <button class="pp-back" onclick="goPage('shop')">← Назад в каталог</button>
       <div class="pp-grid">
         <div class="pp-img">
@@ -886,23 +896,23 @@ function openProd(id){
             <div class="pp-spec"><span class="pp-spec-l">Производство</span><span class="pp-spec-v">Россия, Краснодар</span></div>
           </div>
           <div class="pp-desc">${desc}</div>
-          <div class="pp-price-row">
-            <div>
-              <div class="pp-price">${f(p.price)}<em>₽</em></div>
-              <div class="pp-psub">${p.cnt} шт / банка</div>
-            </div>
-          </div>
-          <button class="pp-add${inCart?' added':''}" id="ppAdd${p.id}" onclick="addFromPage(${p.id})">${inCart?'✓ В корзине':'В корзину'}</button>
           <div class="pp-note">Доставка по всей России · Самовывоз Краснодар</div>
         </div>
       </div>
+    </div>
+    <div class="pp-fixbar">
+      <div class="pp-fixbar-info">
+        <div class="pp-fixbar-name">${p.name}</div>
+        <div class="pp-fixbar-price">${f(p.price)}<em> ₽</em></div>
+      </div>
+      <button class="pp-fixbar-btn${inCart?' added':''}" id="ppFixBtn${p.id}" onclick="addFromPage(${p.id})">${inCart?'✓ В корзине':'В корзину'}</button>
     </div>`;
   goPage('product');
 }
 function addFromPage(id){
   add(id);
-  const btn=document.getElementById('ppAdd'+id);
-  if(btn){btn.textContent='✓ В корзине';btn.classList.add('added');}
+  const fixBtn=document.getElementById('ppFixBtn'+id);
+  if(fixBtn){fixBtn.textContent='✓ В корзине';fixBtn.classList.add('added');}
 }
 function closeProd(){goPage('shop');}
 function updatePmBtn(){}
